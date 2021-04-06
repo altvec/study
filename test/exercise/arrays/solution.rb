@@ -1,12 +1,12 @@
 module Exercise
   module Arrays
     class << self
-      def _max(array)
+      def max(array)
         array.reduce { |a, b| a > b ? a : b }
       end
 
       def replace(array)
-        max_num = _max(array)
+        max_num = max(array)
         array.map { |num| num.positive? ? max_num : num }
       end
 
