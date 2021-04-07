@@ -13,7 +13,13 @@ module Exercise
       end
 
       # Написать свою функцию my_map
-      def my_map; end
+      def my_map
+        result = MyArray.new
+        for item in self do
+          result << yield(item)
+        end
+        result
+      end
 
       # Написать свою функцию my_compact
       def my_compact; end
