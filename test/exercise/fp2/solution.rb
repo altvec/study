@@ -29,7 +29,12 @@ module Exercise
       end
 
       # Написать свою функцию my_reduce
-      def my_reduce; end
+      def my_reduce(init = nil)
+        head = init.nil? ? self[0] : init
+        tail = init.nil? ? self[1..(size - 1)] : self
+        tail.my_each { |item| head = yield(head, item) }
+        head
+      end
     end
   end
 end
